@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<remote  name="aosp"
-           fetch="https://android.googlesource.com/" />
 
-  <remote  name="github"
-           fetch="git://github.com/"
-           review="https://review.onerom.org/"/>
-
+  <remote  name="aosp"
+           fetch=".." />
   <default revision="refs/tags/android-6.0.0_r1"
            remote="aosp"
            sync-j="4" />
 
-  <!-- Build  And Extras-->
-  <project path="build" name="OneRom/android_build" remote="github" revision="staging/mm" >
+  <project path="build" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="platform_manifest" name="OneRom/platform_manifest" remote="github" revision="staging/mm" />
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
-  <project path="art" name="OneRom/android_art" remote="github" revision="staging/mm"  />
-  <project path="bionic" name="OneRom/android_bionic" remote="github" revision="staging/mm" />
-  <project path="bootable/recovery" name="OneRom/bootable_recovery" remote="github" revision="staging/mm" />
+  <project path="art" name="platform/art" groups="pdk" />
+  <project path="bionic" name="platform/bionic" groups="pdk" />
+  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
   <project path="developers/build" name="platform/developers/build" />
@@ -27,8 +21,11 @@
   <project path="developers/docs" name="platform/developers/docs" />
   <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
-  
-  <!-- device -->	
+  <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
+  <project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
+  <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" clone-depth="1" />
+  <project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk" />
+  <project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk" clone-depth="1" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk-fs" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -46,33 +43,29 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs" />
-  <project path="device/qcom/common" name="OneRom/device_qcom_common" remote="github" revision="staging/mm" />
-  <project path="device/qcom/sepolicy" name="OneRom/device_qcom_sepolicy" remote="github" revision="staging/mm" />
+  <project path="device/htc/flounder" name="device/htc/flounder" groups="device,flounder,broadcom_pdk" />
+  <project path="device/htc/flounder-kernel" name="device/htc/flounder-kernel" groups="device,flounder,broadcom_pdk" clone-depth="1" />
+  <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead,broadcom_pdk,generic_fs" />
+  <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead,broadcom_pdk,generic_fs" clone-depth="1" />
+  <project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu,broadcom_pdk" />
+  <project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu,broadcom_pdk" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" groups="pdk-cw-fs,pdk-fs" />
-  
-  <!-- External -->
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/android-mock" name="platform/external/android-mock" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/androidplot" name="platform/external/androidplot" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/android-visualizer" name="OneRom/android_external_android-visualizer" remote="github" revision="staging/mm" />
   <project path="external/ant-glob" name="platform/external/ant-glob" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/antlr" name="platform/external/antlr" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/ant-wireless/ant_native" name="OneRom/android_external_ant-wireless_ant_native" remote="github" revision="staging/mm" />
-  <project path="external/ant-wireless/ant_service" name="OneRom/android_external_ant-wireless_ant_service" remote="github" revision="staging/mm" />
-  <project path="external/ant-wireless/antradio-library" name="OneRom/android_external_ant-wireless_antradio-library" remote="github" revision="staging/mm" />
   <project path="external/apache-commons-math" name="platform/external/apache-commons-math" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" />
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/bluetooth/bluedroid" name="OneRom/android_external_bluetooth_bluedroid" groups="pdk" remote="github" revision="staging/mm" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
-  <project path="external/busybox" name="OneRom/android_external_busybox" remote="github" revision="staging/mm" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
   <project path="external/cblas" name="platform/external/cblas" groups="pdk" />
   <project path="external/ceres-solver" name="platform/external/ceres-solver" groups="pdk-cw-fs,pdk-fs" />
@@ -83,7 +76,6 @@
   <project path="external/cmockery" name="platform/external/cmockery" groups="pdk-fs" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/connectivity" name="OneRom/android_external_connectivity" remote="github" revision="staging/mm" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk-fs" />
   <project path="external/deqp" name="platform/external/deqp" groups="pdk-fs" />
   <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk-cw-fs,pdk-fs" />
@@ -94,7 +86,7 @@
   <project path="external/drm_gralloc" name="platform/external/drm_gralloc" groups="drm_gralloc" />
   <project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" groups="drm_hwcomposer" />
   <project path="external/droiddriver" name="platform/external/droiddriver" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/e2fsprogs" name="OneRom/android_external_e2fsprogs" groups="pdk" remote="github" revision="staging/mm" />
+  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
   <project path="external/easymock" name="platform/external/easymock" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/eclipse-basebuilder" name="platform/external/eclipse-basebuilder" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" groups="pdk-cw-fs,pdk-fs" />
@@ -103,17 +95,15 @@
   <project path="external/embunit" name="platform/external/embunit" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/emma" name="platform/external/emma" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/esd" name="platform/external/esd" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/exfat" name="OneRom/android_external_exfat" remote="github" revision="staging/mm" />
   <project path="external/expat" name="platform/external/expat" groups="pdk" />
   <project path="external/eyes-free" name="platform/external/eyes-free" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/f2fs-tools" name="OneRom/android_external_f2fs-tools" remote="github" revision="staging/mm" />
+  <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="pdk" />
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
   <project path="external/fio" name="platform/external/fio" groups="pdk-fs" />
   <project path="external/flac" name="platform/external/flac" groups="pdk" />
   <project path="external/fonttools" name="platform/external/fonttools" groups="pdk-fs" />
   <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/fuse" name="OneRom/android_external_fuse" remote="github" revision="staging/mm" />
   <project path="external/giflib" name="platform/external/giflib" groups="pdk,qcom_msm8x26" />
   <project path="external/glide" name="platform/external/glide" groups="pdk-fs" />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" groups="dragon" />
@@ -164,8 +154,8 @@
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
   <project path="external/libmpeg2" name="platform/external/libmpeg2" groups="pdk" />
   <project path="external/libmtp" name="platform/external/libmtp" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/libnfc-nci" name="OneRom/android_external_libnfc-nci" remote="github" revision="staging/mm" />
-  <project path="external/libnfc-nxp" name="OneRom/android_external_libnfc-nxp" remote="github" revision="staging/mm" />
+  <project path="external/libnfc-nci" name="platform/external/libnfc-nci" groups="pdk" />
+  <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" groups="pdk" />
   <project path="external/libnl" name="platform/external/libnl" groups="pdk" />
   <project path="external/libogg" name="platform/external/libogg" groups="pdk" />
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" />
@@ -214,7 +204,6 @@
   <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/nist-sip" name="platform/external/nist-sip" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" />
-  <project path="external/ntfs-3g" name="OneRom/android_external_ntfs-3g" remote="github" revision="staging/mm" />
   <project path="external/oauth" name="platform/external/oauth" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk-cw-fs,pdk-fs" />
@@ -235,9 +224,9 @@
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
   <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
-  <project path="external/sepolicy" name="OneRom/android_external_sepolicy" remote="github" revision="staging/mm" />
+  <project path="external/sepolicy" name="platform/external/sepolicy" groups="pdk" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" />
-  <project path="external/skia" name="OneRom/android_external_skia" remote="github" revision="staging/mm" />
+  <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" />
   <project path="external/slf4j" name="platform/external/slf4j" groups="pdk-fs" />
   <project path="external/smali" name="platform/external/smali" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/sonic" name="platform/external/sonic" groups="pdk" />
@@ -251,8 +240,8 @@
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/tcpdump" name="platform/external/tcpdump" groups="pdk,pdk-cw-fs,pdk-fs" />
   <project path="external/timezonepicker-support" name="platform/external/timezonepicker-support" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/tinyalsa" name="OneRom/android_external_tinyalsa" remote="github" revision="staging/mm" />
-  <project path="external/tinycompress" name="OneRom/android_external_tinycompress" remote="github" revision="staging/mm" />
+  <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" />
+  <project path="external/tinycompress" name="platform/external/tinycompress" groups="pdk" />
   <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" />
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
   <project path="external/toybox" name="platform/external/toybox" groups="pdk" />
@@ -264,16 +253,14 @@
   <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
   <project path="external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_8" name="OneRom/android_external_wpa_supplicant_8" remote="github" revision="staging/mm" />
+  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
-  
-  <!-- Frameworks -->	
-  <project path="frameworks/av" name="OneRom/frameworks_av" remote="github" revision="staging/mm" />
-  <project path="frameworks/base" name="OneRom/frameworks_base" remote="github" revision="staging/mm" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
+  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -282,27 +269,25 @@
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/ml" name="platform/frameworks/ml" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/native" name="OneRom/frameworks_native" remote="github" revision="staging/mm" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" />
-  <project path="frameworks/opt/bluetooth" name="OneRom/frameworks_opt_bluetooth" remote="github" revision="staging/mm" groups="pdk-cw-fs" />
+  <project path="frameworks/opt/bluetooth" name="platform/frameworks/opt/bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/carddav" name="platform/frameworks/opt/carddav" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/opt/cards" name="OneRom/frameworks_opt_cards" remote="github" revision="staging/mm" />
   <project path="frameworks/opt/chips" name="platform/frameworks/opt/chips" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/colorpicker" name="platform/frameworks/opt/colorpicker" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/opt/hardware" name="OneRom/frameworks_opt_hardware" remote="github" revision="staging/mm" />
-  <project path="frameworks/opt/datetimepicker" name="OneRom/frameworks_opt_datetimepicker" remote="github" revision="staging/mm" />
+  <project path="frameworks/opt/datetimepicker" name="platform/frameworks/opt/datetimepicker" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/inputconnectioncommon" name="platform/frameworks/opt/inputconnectioncommon" groups="pdk-fs" />
   <project path="frameworks/opt/inputmethodcommon" name="platform/frameworks/opt/inputmethodcommon" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/net/ethernet" name="platform/frameworks/opt/net/ethernet" groups="pdk-fs" />
-  <project path="frameworks/opt/net/ims" name="OneRom/frameworks_opt_net_ims" remote="github" revision="staging/mm" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/net/wifi" name="platform/frameworks/opt/net/wifi" groups="pdk" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/setupwizard" name="platform/frameworks/opt/setupwizard" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/opt/telephony" name="OneRom/frameworks_opt_telephony" remote="github" revision="staging/mm" />
-  <project path="frameworks/opt/timezonepicker" name="OneRom/frameworks_opt_timezonepicker" remote="github" revision="staging/mm" />
+  <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="pdk" />
+  <project path="frameworks/opt/timezonepicker" name="platform/frameworks/opt/timezonepicker" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/widget" name="platform/frameworks/opt/widget" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
@@ -311,150 +296,119 @@
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" />
-  
-  <!-- Hardware -->
   <project path="hardware/akm" name="platform/hardware/akm" />
-  <project path="hardware/broadcom/libbt" name="OneRom/hardware_broadcom_libbt" remote="github" revision="staging/mm" />
-  <project path="hardware/broadcom/wlan" name="OneRom/hardware_broadcom_wlan" remote="github" revision="staging/mm" />
-  <project path="hardware/cm" name="OneRom/hardware_cm" remote="github" revision="staging/mm" />
-  <project path="hardware/cyanogen" name="OneRom/hardware_cyanogen" remote="github" revision="staging/mm" />
+  <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
+  <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="pdk,broadcom_wlan" />
   <project path="hardware/intel/audio_media" name="platform/hardware/intel/audio_media" groups="intel" />
   <project path="hardware/intel/bootstub" name="platform/hardware/intel/bootstub" groups="intel" />
   <project path="hardware/intel/common/bd_prov" name="platform/hardware/intel/common/bd_prov" groups="intel" />
-  <project path="hardware/intel/common/libmix" name="OneRom/hardware_intel_common_libmix" remote="github" revision="staging/mm" />
-  <project path="hardware/intel/common/libstagefrighthw" name="OneRom/hardware_intel_common_libstagefrighthw" remote="github" revision="staging/mm" />
-  <project path="hardware/intel/common/libva" name="OneRom/hardware_intel_common_libva" remote="github" revision="staging/mm" />
+  <project path="hardware/intel/common/libmix" name="platform/hardware/intel/common/libmix" groups="intel" />
+  <project path="hardware/intel/common/libstagefrighthw" name="platform/hardware/intel/common/libstagefrighthw" groups="intel" />
+  <project path="hardware/intel/common/libva" name="platform/hardware/intel/common/libva" groups="intel" />
   <project path="hardware/intel/common/libwsbm" name="platform/hardware/intel/common/libwsbm" groups="intel" />
-  <project path="hardware/intel/common/omx-components" name="OneRom/hardware_intel_common_omx-components" remote="github" revision="staging/mm" />
-  <project path="hardware/intel/common/utils" name="OneRom/hardware_intel_common_utils" remote="github" revision="staging/mm" />
-  <project path="hardware/intel/common/wrs_omxil_core" name="OneRom/hardware_intel_common_wrs_omxil_core" remote="github" revision="staging/mm" />
-  <project path="hardware/intel/img/hwcomposer" name="OneRom/hardware_intel_img_hwcomposer" remote="github" revision="staging/mm" />
+  <project path="hardware/intel/common/omx-components" name="platform/hardware/intel/common/omx-components" groups="intel" />
+  <project path="hardware/intel/common/utils" name="platform/hardware/intel/common/utils" groups="intel" />
+  <project path="hardware/intel/common/wrs_omxil_core" name="platform/hardware/intel/common/wrs_omxil_core" groups="intel" />
+  <project path="hardware/intel/img/hwcomposer" name="platform/hardware/intel/img/hwcomposer" groups="intel" />
   <project path="hardware/intel/img/psb_headers" name="platform/hardware/intel/img/psb_headers" groups="intel" />
-  <project path="hardware/intel/img/psb_video" name="OneRom/hardware_intel_img_psb_video" remote="github" revision="staging/mm" />
+  <project path="hardware/intel/img/psb_video" name="platform/hardware/intel/img/psb_video" groups="intel" />
   <project path="hardware/intel/sensors" name="platform/hardware/intel/sensors" groups="intel_sensors" />
-  <project path="hardware/invensense" name="OneRom/hardware_invensense" remote="github" revision="staging/mm" />
-  <project path="hardware/libhardware" name="OneRom/hardware_libhardware" remote="github" revision="staging/mm" />
-  <project path="hardware/libhardware_legacy" name="OneRom/hardware_libhardware_legacy" remote="github" revision="staging/mm" />
+  <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
+  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
+  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/marvell/bt" name="platform/hardware/marvell/bt" groups="marvell_bt" />
   <project path="hardware/mediatek" name="platform/hardware/mediatek" groups="mediatek,mediatek_wear" />
   <project path="hardware/nvidia/audio" name="platform/hardware/nvidia/audio" groups="nvidia_audio" />
-  <project path="hardware/qcom/audio/default" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/audio-caf/apq8084" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8084" />
-  <project path="hardware/qcom/audio-caf/msm8226" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8226" />
-  <project path="hardware/qcom/audio-caf/msm8610" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8610" />
-  <project path="hardware/qcom/audio-caf/msm8660" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8660" />
-  <project path="hardware/qcom/audio-caf/msm8916" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8916" />
-  <project path="hardware/qcom/audio-caf/msm8960" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8960" />
-  <project path="hardware/qcom/audio-caf/msm8974" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8974" />
-  <project path="hardware/qcom/audio-caf/msm8994" name="OneRom/hardware_qcom_audio" remote="github" revision="staging/mm-caf-8994" />
-  <project path="hardware/qcom/bt" name="OneRom/hardware_qcom_bt" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/display" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/display-caf/apq8084" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8084" />
-  <project path="hardware/qcom/display-caf/msm8226" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8226" />
-  <project path="hardware/qcom/display-caf/msm8610" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8610" />
-  <project path="hardware/qcom/display-caf/msm8660" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8660" />
-  <project path="hardware/qcom/display-caf/msm8916" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8916" />
-  <project path="hardware/qcom/display-caf/msm8960" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8960" />
-  <project path="hardware/qcom/display-caf/msm8974" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8974" />
-  <project path="hardware/qcom/display-caf/msm8994" name="OneRom/hardware_qcom_display" remote="github" revision="staging/mm-caf-8994" />
-  <project path="hardware/qcom/fm" name="OneRom/hardware_qcom_fm" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/gps" name="OneRom/hardware_qcom_gps" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/keymaster" name="OneRom/hardware_qcom_keymaster" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/media/default" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm" />
-  <project path="hardware/qcom/media-caf/apq8084" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8084" />
-  <project path="hardware/qcom/media-caf/msm8226" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8226" />
-  <project path="hardware/qcom/media-caf/msm8610" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8610" />
-  <project path="hardware/qcom/media-caf/msm8660" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8660" />
-  <project path="hardware/qcom/media-caf/msm8916" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8916" />
-  <project path="hardware/qcom/media-caf/msm8960" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8960" />
-  <project path="hardware/qcom/media-caf/msm8974" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8974" />
-  <project path="hardware/qcom/media-caf/msm8994" name="OneRom/hardware_qcom_media" remote="github" revision="staging/mm-caf-8994" />
+  <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom,qcom_audio" />
+  <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
+  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom" />
+  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="pdk,qcom,qcom_display" />
+  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps" />
+  <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom,qcom_keymaster" />
+  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom" />
   <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960" />
   <project path="hardware/qcom/msm8x26" name="platform/hardware/qcom/msm8x26" groups="qcom_msm8x26" />
   <project path="hardware/qcom/msm8x27" name="platform/hardware/qcom/msm8x27" groups="qcom_msm8x27" />
   <project path="hardware/qcom/msm8x74" name="platform/hardware/qcom/msm8x74" groups="pdk,qcom_msm8x74" />
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84" />
-  <project path="hardware/qcom/power" name="OneRom/hardware_qcom_power" remote="github" revision="staging/mm" />
+  <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
-  <project path="hardware/qcom/wlan" name="OneRom/hardware_qcom_wlan" remote="github" revision="staging/mm" />
-  <project path="hardware/ril" name="OneRom/hardware_ril" remote="github" revision="staging/mm" />
-  <project path="hardware/ril-caf" name="OneRom/hardware_ril" remote="github" revision="mm6.0-caf-staging" />
-  <project path="hardware/samsung_slsi/exynos5" name="OneRom/hardware_samsung_slsi_exynos5" remote="github" revision="staging/mm" />
-  <project path="hardware/ti/omap3" name="OneRom/hardware_ti_omap3" remote="github" revision="staging/mm" />
-  <project path="hardware/ti/omap4" name="OneRom/hardware_ti_omap4" remote="github" revision="staging/mm" />
-  <project path="hardware/ti/omap4xxx" name="OneRom/hardware_ti_omap4xxx" remote="github" revision="staging/mm" />
-  <project path="hardware/ti/wlan" name="OneRom/hardware_ti_wlan" remote="github" revision="staging/mm" />
-  <project path="hardware/ti/wpan" name="OneRom/hardware_ti_wpan" remote="github" revision="staging/mm" />
-  <project path="libcore" name="OneRom/android_libcore" remote="github" revision="staging/mm" />
+  <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan" />
+  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
+  <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3" />
+  <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" />
+  <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
+  <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" />
-  
-  <!-- Packages -->
-  <project path="packages/apps/AudioFX" name="OneRom/packages_apps_AudioFX" remote="github" revision="staging/mm" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
-  <project path="packages/apps/Bluetooth" name="OneRom/packages_apps_Bluetooth" remote="github" revision="staging/mm" />
-  <project path="packages/apps/Browser" name="OneRom/packages_apps_Browser" remote="github" revision="staging/mm" />
+  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" groups="pdk-fs"/>
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" groups="pdk-fs" />
-  <project path="packages/apps/Calendar" name="OneRom/packages_apps_Calendar" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" groups="pdk-fs" />
   <project path="packages/apps/Camera" name="platform/packages/apps/Camera" groups="pdk-fs" />
-  <project path="packages/apps/Camera2" name="OneRom/packages_apps_Camera2" remote="github" revision="staging/mm" />
-   <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-fs" />
-  <project path="packages/apps/CellBroadcastReceiver" name="OneRom/packages_apps_CellBroadcastReceiver" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" groups="pdk-fs" />
+  <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-fs" />
+  <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" groups="pdk-fs" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Contacts" name="OneRom/packages_apps_Contacts" remote="github" revision="staging/mm" />
-  <project path="packages/apps/ContactsCommon" name="OneRom/packages_apps_ContactsCommon" remote="github" revision="staging/mm" />
-  <project path="packages/apps/DeskClock" name="OneRom/packages_apps_DeskClock" remote="github" revision="staging/mm" />
-  <project path="packages/apps/Dialer" name="OneRom/packages_apps_Dialer" remote="github" revision="staging/mm" />
-  <project path="packages/apps/Email" name="OneRom/packages_apps_Email" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" groups="pdk-fs" />
+  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" groups="pdk-fs"/>
+  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" groups="pdk-fs" />
+  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" groups="pdk-fs" />
+  <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" />
   <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" groups="pdk-fs" />
-  <project path="packages/apps/Exchange" name="OneRom/packages_apps_Exchange" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" groups="pdk-fs" />
   <project path="packages/apps/FMRadio" name="platform/packages/apps/FMRadio" groups="pdk-fs" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" groups="pdk-fs" />
-  <project path="packages/apps/Gallery2" name="OneRom/packages_apps_Gallery2" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" groups="pdk-fs" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
-  <project path="packages/apps/InCallUI" name="OneRom/packages_apps_InCallUI" remote="github" revision="staging/mm" />
+  <project path="packages/apps/InCallUI" name="platform/packages/apps/InCallUI" groups="pdk-fs" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" />
+  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" groups="pdk-fs" />
+  <project path="packages/apps/Launcher3" name="platform/packages/apps/Launcher3" groups="pdk-fs" />
   <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" groups="pdk-fs" />
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" />
-  <project path="packages/apps/Messaging" name="OneRom/packages_apps_Messaging" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" />
   <project path="packages/apps/Music" name="platform/packages/apps/Music" groups="pdk-fs" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" groups="pdk-fs" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" groups="apps_nfc,pdk-fs" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" groups="pdk-fs" />
-  <project path="packages/apps/PhoneCommon" name="OneRom/packages_apps_PhoneCommon" remote="github" revision="staging/mm" />
-  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
-  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/Settings" name="OneRom/packages_apps_Settings" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" groups="pdk-fs" />
+  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs"/>
+  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" />
+  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" />
+  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" />
+  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" groups="pdk-fs" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" groups="pdk-fs" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" groups="pdk-fs" />
-  <project path="packages/apps/Stk" name="OneRom/packages_apps_Stk" remote="github" revision="staging/mm" />
+  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" groups="pdk-fs" />
   <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" groups="pdk-fs" />
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="generic_fs" />
-  <project path="packages/apps/UnifiedEmail" name="OneRom/packages_apps_UnifiedEmail" remote="github" revision="staging/mm" />
+  <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" groups="pdk-fs" />
   <project path="packages/experimental" name="platform/packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="OneRom/packages_inputmethods_LatinIME" remote="github" revision="staging/mm" />
+  <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
   <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" groups="pdk-fs" />
   <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" groups="pdk-fs" />
   <project path="packages/providers/BookmarkProvider" name="platform/packages/providers/BookmarkProvider" groups="pdk-fs" />
-  <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" groups="pdk-cw-fs" />
+  <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/CallLogProvider" name="platform/packages/providers/CallLogProvider" groups="pdk-fs" />
-  <project path="packages/providers/ContactsProvider" name="OneRom/packages_providers_ContactsProvider" remote="github" revision="staging/mm" />
-  <project path="packages/providers/DownloadProvider" name="OneRom/packages_providers_DownloadProvider" remote="github" revision="staging/mm" />
-  <project path="packages/providers/MediaProvider" name="OneRom/packages_providers_MediaProvider" remote="github" revision="staging/mm" />
-  <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" />
-  <project path="packages/providers/TelephonyProvider" name="OneRom/packages_providers_TelephonyProvider" remote="github" revision="staging/mm" />
+  <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" groups="pdk-fs" />
+  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/TvProvider" name="platform/packages/providers/TvProvider" groups="pdk-fs" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/screensavers/Basic" name="platform/packages/screensavers/Basic" groups="pdk-fs" />
   <project path="packages/screensavers/PhotoTable" name="platform/packages/screensavers/PhotoTable" groups="pdk-fs" />
   <project path="packages/screensavers/WebView" name="platform/packages/screensavers/WebView" groups="pdk-fs" />
-  <project path="packages/services/Mms" name="OneRom/packages_services_Mms" remote="github" revision="staging/mm" />
-  <project path="packages/services/Telecomm" name="OneRom/packages_services_Telecomm" remote="github" revision="staging/mm" />
-  <project path="packages/services/Telephony" name="OneRom/packages_services_Telephony" remote="github" revision="staging/mm" />
+  <project path="packages/services/Mms" name="platform/packages/services/Mms" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telecomm" name="platform/packages/services/Telecomm" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telephony" name="platform/packages/services/Telephony" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" groups="pdk-fs" />
   <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" groups="pdk-fs" />
   <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" groups="pdk-fs" />
@@ -463,8 +417,6 @@
   <project path="packages/wallpapers/NoiseField" name="platform/packages/wallpapers/NoiseField" groups="pdk-fs" />
   <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
-  
-  <!-- Platform and Prebuilts -->		
   <project path="platform_testing" name="platform/platform_testing" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="pdk,darwin" />
@@ -493,23 +445,19 @@
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" />
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
-  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin,pdk,pdk-cw-fs" />
-  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk,pdk-cw-fs" />
+  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin,pdk,pdk-cw-fs,pdk-fs" />
+  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk,pdk-cw-fs,pdk-fs" />
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" clone-depth="1" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
- 
-  <!-- System And Tools -->
   <project path="system/bt" name="platform/system/bt" groups="pdk" />
-  <project path="system/core" name="OneRom/android_system_core" remote="github" revision="staging/mm" />
-  <project path="system/extras" name="OneRom/android_system_extras" remote="github" revision="staging/mm" />
-  <project path="system/extras/su" name="OneRom/android_system_extras_su" remote="github" revision="staging/mm" />
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
-  <project path="system/keymaster" name="OneRom/android_system_keymaster" remote="github" revision="staging/mm" />
-  <project path="system/media" name="OneRom/android_system_media" remote="github" revision="staging/mm" />
-  <project path="system/netd" name="OneRom/android_system_netd" remote="github" revision="staging/mm" />
-  <project path="system/qcom" name="OneRom/android_system_qcom" remote="github" revision="staging/mm" />
+  <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" />
+  <project path="system/media" name="platform/system/media" groups="pdk" />
+  <project path="system/netd" name="platform/system/netd" groups="pdk" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" groups="notdefault,tools" />
@@ -527,21 +475,4 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
 
-  <!-- OneRom -->
-  <project path="vendor/onerom" name="OneRom/vendor_onerom" remote="github" revision="staging/mm" />
-
-  <!-- Launcher -->
-  <project path="packages/apps/Rosa" name="OneRom/packages_apps_Rosa" remote="github" revision="staging/mm" />
-
-  <!-- SamsungServiceMode -->
-  <project path="packages/apps/SamsungServiceMode" name="OneRom/packages_apps_SamsungServiceMode" remote="github" revision="staging/mm" />
-
-  <!-- qrngd -->
-  <project path="external/qrngd" name="OneRom/android_external_qrngd" remote="github" revision="staging/mm" />
-
-<!--  ffmpeg 
-  <project path="external/ffmpeg" name="OneRom/android_external_ffmpeg" remote="github" revision="staging/mm" />
-  <project path="external/stagefright-plugins" name="OneRom/android_external_stagefright-plugins" remote="github" revision="staging/mm" /> -->
-
 </manifest>
-
