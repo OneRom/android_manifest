@@ -1,0 +1,82 @@
+OneRom
+===================
+
+
+Let's Getting Started
+---------------------
+
+To get started with OneRom 6.0, you'll need to get familiar with
+[Git and Repo](http://source.android.com/download/using-repo).
+
+Please take note that we have two main line branches depending on
+which hardware base your phone is working.
+
+If you have a qcom powered device which needs CodeAuroraForum (CAF)
+trees please us the mm-caf branch which pulls for the effected packages
+the correct caf version for you.
+
+To initialize your local repository using the OneRom trees, use this command:
+
+
+	repo init -u git://github.com/OneRom/manifest.git -b staging/mm
+
+
+
+
+To initialize your local repository using the OneRom [CAF] trees, use this command:
+
+
+	repo init -u git://github.com/OneRom/manifest.git -b staging/mm-caf
+
+
+
+
+Then sync up with this command:
+
+	repo sync
+
+
+
+Submitting Patches
+------------------
+
+We're open source, and patches are always welcome!
+You can send patches by using these commands:
+
+    cd <workspace>
+    repo start <branch> OneRom/<project>
+    cd <project>
+    git add -A
+    git commit -a
+    cd <workspace>
+    repo upload OneRom/<project>
+
+Commit your patches in a single commit.
+
+You can also use Plain Git upload
+```bash
+  $ cd <project>
+  $ git add -A
+  $ git commit -a
+  $ git push ssh://<username>@review.onerom.org:29418/onerom/<project> HEAD:refs/for/<branch>
+```
+
+
+Squash multiple commit using this command:
+
+	git rebase -i HEAD~<# of commits>
+
+If you are going to make extra additions, just repeat steps (Don't repo start again), but instead of
+
+	git commit -a
+
+use
+
+	git commit --amend
+
+Gerrit will recognize it as a new patchset.
+
+
+
+To view the status of your and others patches, visit [OneRom Review](http://review.onerom.org)
+
