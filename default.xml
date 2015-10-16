@@ -255,7 +255,7 @@
   <project path="external/tinyalsa" name="OneRom/android_external_tinyalsa" remote="onerom" />
   <project path="external/tinycompress" name="OneRom/android_external_tinycompress" remote="onerom" />
   <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" />
-  <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
+  <project path="external/tinyxml2" name="OneRom/android_external_tinyxml2" remote="onerom" groups="pdk" />
   <project path="external/toybox" name="platform/external/toybox" groups="pdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" />
   <project path="external/v8" name="platform/external/v8" groups="pdk" />
@@ -332,13 +332,28 @@
   <project path="hardware/marvell/bt" name="platform/hardware/marvell/bt" groups="marvell_bt" />
   <project path="hardware/mediatek" name="platform/hardware/mediatek" groups="mediatek,mediatek_wear" />
   <project path="hardware/nvidia/audio" name="platform/hardware/nvidia/audio" groups="nvidia_audio" />
-  <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom,qcom_audio" />
+  <project path="hardware/qcom/audio/default" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" />
+  <project path="hardware/qcom/audio-caf/apq8084" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8084" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8916" />
+  <project path="hardware/qcom/audio-caf/msm8960" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8960" />
+  <project path="hardware/qcom/audio-caf/msm8974" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8974" />
+  <project path="hardware/qcom/audio-caf/msm8994" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8994" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
   <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom" />
-  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="pdk,qcom,qcom_display" />
+  <project path="hardware/qcom/display/default" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_display" remote="onerom" />
+  <project path="hardware/qcom/display-caf/apq8084" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8084" />
+  <project path="hardware/qcom/display-caf/msm8916" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8916" />
+  <project path="hardware/qcom/display-caf/msm8960" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8960" />
+  <project path="hardware/qcom/display-caf/msm8974" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8974" />
+  <project path="hardware/qcom/display-caf/msm8994" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8994" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps" />
   <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom,qcom_keymaster" />
-  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom" />
+  <project path="hardware/qcom/media/default" name="OneRom/hardware_qcom_media" groups="qcom,qcom_display" remote="onerom" />
+  <project path="hardware/qcom/media-caf/apq8084" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" remote="onerom" revision="mm-caf-8084" />
+  <project path="hardware/qcom/media-caf/msm8916" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" remote="onerom" revision="mm-caf-8916" />
+  <project path="hardware/qcom/media-caf/msm8960" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" remote="onerom" revision="mm-caf-8960" />
+  <project path="hardware/qcom/media-caf/msm8974" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" remote="onerom" revision="mm-caf-8974" />
+  <project path="hardware/qcom/media-caf/msm8994" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" remote="onerom" revision="mm-caf-8994" />
   <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960" />
   <project path="hardware/qcom/msm8x26" name="platform/hardware/qcom/msm8x26" groups="qcom_msm8x26" />
   <project path="hardware/qcom/msm8x27" name="platform/hardware/qcom/msm8x27" groups="qcom_msm8x27" />
@@ -347,14 +362,14 @@
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
   <project path="hardware/qcom/wlan" name="OneRom/hardware_qcom_wlan" remote="onerom" groups="qcom_wlan" />
   <project path="hardware/ril" name="OneRom/hardware_ril" remote="onerom" />
-  <project path="hardware/ril-caf" name="OneRom/hardware_ril" remote="onerom" revision="staging/mm-caf" />
+  <project path="hardware/ril-caf" name="OneRom/hardware_ril" remote="onerom" revision="mm-caf" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
   <project path="libcore" name="OneRom/android_libcore" remote="onerom" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/BasicSmsReceiver" name="OneRom/packages_apps_BasicSmsReceiver" remote="onerom" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Browser" name="platform/packages/apps/Browser" groups="pdk-fs"/>
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" groups="pdk-fs" />
@@ -371,7 +386,7 @@
   <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" />
   <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" groups="pdk-fs" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" groups="pdk-fs" />
-  <project path="packages/apps/FMRadio" name="platform/packages/apps/FMRadio" groups="pdk-fs" />
+  <project path="packages/apps/FMRadio" name="OneRom/packages_apps_FMRadio" remote="onerom" groups="pdk-fs" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" groups="pdk-fs" />
   <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" groups="pdk-fs" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
@@ -464,7 +479,7 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="system/bt" name="platform/system/bt" groups="pdk" />
+  <project path="system/bt" name="OneRom/android_system_bt" remote="onerom" groups="pdk" />
   <project path="system/core" name="OneRom/system_core" remote="onerom" groups="pdk" />
   <project path="system/extras" name="OneRom/system_extras" remote="onerom" groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
@@ -488,6 +503,10 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
-  <project path="vendor/onerom" name="OneRom/vendor_onerom" remote="onerom" revision="staging/mm" />
+  <project path="vendor/onerom" name="OneRom/vendor_onerom" remote="onerom" />
+  <project path="vendor/qcom/opensource/display-frameworks" name="OneRom/android_vendor_qcom_opensource_display-frameworks" remote="onerom" />
+  <project path="vendor/qcom/opensource/dpm" name="OneRom/android_vendor_qcom_opensource_dpm" remote="onerom" />
+  <project path="vendor/qcom/opensource/time-services" name="OneRom/android_vendor_qcom_opensource_time-services" remote="onerom" />
 
+ 
 </manifest>
