@@ -25,7 +25,7 @@ To initialize your local repository using the OneRom Experimental trees, use thi
 To initialize your local repository using the OneRom [Stable Channel] trees, use this command:
 
 
-	repo init -u git://github.com/OneRom/manifest.git -b staging/mm
+	repo init -u git://github.com/OneRom/manifest.git -b mm
 
 
 
