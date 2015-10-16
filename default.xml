@@ -488,7 +488,7 @@
   <project path="system/netd" name="OneRom/android_system_netd" remote="onerom" />
   <project path="system/qcom" name="OneRom/android_system_qcom" remote="onerom" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
-  <project path="system/vold" name="platform/system/vold" groups="pdk" />
+  <project path="system/vold" name="OneRom/android_system_vold" remote="onerom" groups="pdk" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" groups="notdefault,tools" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
