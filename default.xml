@@ -370,40 +370,38 @@
   <project path="libnativehelper" name="platform/libnativehelper" remote="aosp" groups="pdk" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" remote="aosp" />
   <project path="packages/apps/BasicSmsReceiver" name="OneRom/packages_apps_BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" remote="aosp" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Bluetooth" name="OneRom/packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/Browser" name="OneRom/packages_apps_Browser" groups="pdk-fs" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Calendar" name="OneRom/packages_apps_Calendar" groups="pdk-fs" />
   <project path="packages/apps/Camera" name="platform/packages/apps/Camera" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Camera2" name="OneRom/packages_apps_Camera2" groups="pdk-fs" />
   <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" remote="aosp" groups="pdk-fs" />
+  <project path="packages/apps/CellBroadcastReceiver" name="OneRom/packages_apps_CellBroadcastReceiver" groups="pdk-fs" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" groups="pdk-fs" remote="aosp"/>
-  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Contacts" name="OneRom/packages_apps_Contacts" groups="pdk-fs" />
+  <project path="packages/apps/ContactsCommon" name="OneRom/packages_apps_ContactsCommon" groups="pdk-fs" />
+  <project path="packages/apps/DeskClock" name="OneRom/packages_apps_DeskClock" groups="pdk-fs" />
+  <project path="packages/apps/Dialer" name="OneRom/packages_apps_Dialer" groups="pdk-fs" />
+  <project path="packages/apps/Email" name="OneRom/packages_apps_Email" groups="pdk-fs" />
   <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" remote="aosp" groups="pdk-fs" />
-  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Exchange" name="OneRom/packages_apps_Exchange" groups="pdk-fs" />
   <project path="packages/apps/FMRadio" name="OneRom/packages_apps_FMRadio" groups="pdk-fs" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Gallery2" name="OneRom/packages_apps_Gallery2" groups="pdk-fs" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/InCallUI" name="platform/packages/apps/InCallUI" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/InCallUI" name="OneRom/packages_apps_InCallUI" groups="pdk-fs" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Rosa" name="OneRom/packages_apps_Rosa" />
   <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" remote="aosp" groups="pdk-fs" />
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" remote="aosp" groups="pdk-fs" />
-  <project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/Messaging" name="OneRom/packages_apps_Messaging" groups="pdk-fs" />
   <project path="packages/apps/Music" name="platform/packages/apps/Music" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" groups="apps_nfc,pdk-fs" remote="aosp" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" remote="aosp" groups="pdk-fs" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" remote="aosp" groups="pdk-cw-fs,pdk-fs"/>
+  <project path="packages/apps/PhoneCommon" name="OneRom/packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs"/>
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" remote="aosp" />
@@ -412,13 +410,13 @@
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" remote="aosp" />
+  <project path="packages/apps/Stk" name="OneRom/packages_apps_Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="generic_fs" remote="aosp" />
-  <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" groups="pdk-fs" remote="aosp" />
+  <project path="packages/apps/UnifiedEmail" name="OneRom/packages_apps_UnifiedEmail" groups="pdk-fs" />
   <project path="packages/experimental" name="platform/packages/experimental" remote="aosp" />
-  <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" remote="aosp" groups="pdk-fs" />
+  <project path="packages/inputmethods/LatinIME" name="OneRom/packages_inputmethods_LatinIME" groups="pdk-fs" />
   <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" groups="pdk-fs" remote="aosp" />
   <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" remote="aosp" groups="pdk-fs" />
   <project path="packages/providers/BookmarkProvider" name="platform/packages/providers/BookmarkProvider" groups="pdk-fs" remote="aosp" />
