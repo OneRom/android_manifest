@@ -26,7 +26,7 @@
   <project path="build" name="OneRom/android_build" remote="onerom" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="manifest" name="OneRom/android_manifest" remote="onerom" />
+  <project path="manifest" name="OneRom/manifest" remote="onerom" />
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="OneRom/android_art" remote="onerom" groups="pdk" />
   <project path="bionic" name="OneRom/android_bionic" remote="onerom" groups="pdk" />
@@ -70,7 +70,7 @@
   <project path="external/ant-wireless/antradio-library" name="OneRom/android_external_ant-wireless_antradio-library" remote="onerom" />
   <project path="external/apache-commons-math" name="platform/external/apache-commons-math" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" />
+  <project path="external/apache-http" name="OneRom/android_external_apache-http" remote="onerom" groups="pdk" />
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs,pdk-fs" />
@@ -340,7 +340,7 @@
   <project path="hardware/qcom/audio-caf/msm8994" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" remote="onerom" revision="mm-caf-8994" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
   <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom" />
-  <project path="hardware/qcom/display/default" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_display" remote="onerom" />
+  <project path="hardware/qcom/display/default" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" />
   <project path="hardware/qcom/display-caf/apq8084" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8084" />
   <project path="hardware/qcom/display-caf/msm8916" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8916" />
   <project path="hardware/qcom/display-caf/msm8960" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" remote="onerom" revision="mm-caf-8960" />
