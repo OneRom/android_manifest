@@ -503,7 +503,7 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
-  <project path="vendor/onerom" name="OneRom/vendor_onerom" remote="onerom" />
+  <project path="vendor/orm" name="OneRom/vendor_orm" remote="onerom" />
   <project path="vendor/qcom/opensource/display-frameworks" name="OneRom/android_vendor_qcom_opensource_display-frameworks" remote="onerom" />
   <project path="vendor/qcom/opensource/dpm" name="OneRom/android_vendor_qcom_opensource_dpm" remote="onerom" />
   <project path="vendor/qcom/opensource/time-services" name="OneRom/android_vendor_qcom_opensource_time-services" remote="onerom" />
