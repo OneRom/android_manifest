@@ -9,13 +9,12 @@ To get started with OneRom 6.0, you'll need to get familiar with
 [Git and Repo](http://source.android.com/download/using-repo).
 
 Please take note that we have two main line branches depending on
-which hardware base your phone is working.
+which development base your phone needs.
 
-If you have a qcom powered device which needs CodeAuroraForum (CAF)
-trees please us the mm-caf branch which pulls for the effected packages
-the correct caf version for you.
+If you want to have a stable experience Then you need stable
+trees please us the mm branch which pulls for the stable packages
 
-To initialize your local repository using the OneRom trees, use this command:
+To initialize your local repository using the OneRom Experimental trees, use this command:
 
 
 	repo init -u git://github.com/OneRom/manifest.git -b staging/mm
@@ -23,10 +22,10 @@ To initialize your local repository using the OneRom trees, use this command:
 
 
 
-To initialize your local repository using the OneRom [CAF] trees, use this command:
+To initialize your local repository using the OneRom [Stable Channel] trees, use this command:
 
 
-	repo init -u git://github.com/OneRom/manifest.git -b staging/mm-caf
+	repo init -u git://github.com/OneRom/manifest.git -b staging/mm
 
 
 
