@@ -9,20 +9,21 @@ To get started with OneRom 6.0, you'll need to get familiar with
 [Git and Repo](http://source.android.com/download/using-repo).
 
 Please take note that we have two main line branches depending on
-which development base your phone needs.
+which development base and hardware your device needs.
 
-If you want to have a stable experience Then you need stable
-trees please us the mm branch which pulls for the stable packages
+For all non-qcom/AOSP devices please use mm6.0 branch
 
-To initialize your local repository using the OneRom Experimental trees, use this command:
+For all qcom/CAF specific trees please use mm6.0-qcom
 
-
-	repo init -u git://github.com/OneRom/manifest.git -b staging/mm
+To initialize your local repository using the OneRom [Non Qcom / AOSP] trees, use this command:
 
 
+	repo init -u git://github.com/OneRom/manifest.git -b mm6.0
 
 
-To initialize your local repository using the OneRom [Stable Channel] trees, use this command:
+
+
+To initialize your local repository using the OneRom [Qcom/CAF Channel] trees, use this command:
 
 
 	repo init -u git://github.com/OneRom/manifest.git -b mm
