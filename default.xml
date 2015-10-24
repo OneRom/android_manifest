@@ -296,7 +296,7 @@
   <project path="frameworks/opt/net/ethernet" name="platform/frameworks/opt/net/ethernet" groups="pdk-fs" remote="aosp" />
   <project path="frameworks/opt/net/ims" name="OneRom/android_frameworks_opt_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="frameworks/opt/net/wifi" name="platform/frameworks/opt/net/wifi" groups="pdk" remote="aosp" />
+  <project path="frameworks/opt/net/wifi" name="OneRom/frameworks_opt_net_wifi" groups="pdk" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" remote="aosp" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/setupwizard" name="platform/frameworks/opt/setupwizard" remote="aosp" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/telephony" name="OneRom/android_frameworks_opt_telephony" groups="pdk" />
@@ -338,15 +338,16 @@
   <project path="hardware/qcom/audio-caf/msm8960" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" revision="mm-caf-8960" />
   <project path="hardware/qcom/audio-caf/msm8974" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" revision="mm-caf-8974" />
   <project path="hardware/qcom/audio-caf/msm8994" name="OneRom/hardware_qcom_audio" groups="qcom,qcom_audio" revision="mm-caf-8994" />
-  <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" remote="aosp" />
+  <project path="hardware/qcom/bt" name="OneRom/hardware_qcom_bt" groups="qcom" />
+  <project path="hardware/qcom/camera" name="OneRom/hardware_qcom_camera" remote="github" />
   <project path="hardware/qcom/display/default" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" />
   <project path="hardware/qcom/display-caf/apq8084" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" revision="mm-caf-8084" />
   <project path="hardware/qcom/display-caf/msm8916" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" revision="mm-caf-8916" />
   <project path="hardware/qcom/display-caf/msm8960" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" revision="mm-caf-8960" />
   <project path="hardware/qcom/display-caf/msm8974" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" revision="mm-caf-8974" />
   <project path="hardware/qcom/display-caf/msm8994" name="OneRom/hardware_qcom_display" groups="qcom,qcom_display" revision="mm-caf-8994" />
-  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps" remote="aosp" />
-  <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom,qcom_keymaster" remote="aosp" />
+  <project path="hardware/qcom/gps" name="OneRom/hardware_qcom_gps" groups="qcom,qcom_gps" />
+  <project path="hardware/qcom/keymaster" name="OneRom/hardware_qcom_keymaster" groups="qcom,qcom_keymaster" />
   <project path="hardware/qcom/media/default" name="OneRom/hardware_qcom_media" groups="qcom,qcom_display" />
   <project path="hardware/qcom/media-caf/apq8084" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" revision="mm-caf-8084" />
   <project path="hardware/qcom/media-caf/msm8916" name="OneRom/hardware_qcom_media" groups="qcom,qcom_media" revision="mm-caf-8916" />
@@ -484,7 +485,7 @@
   <project path="system/media" name="OneRom/android_system_media" />
   <project path="system/netd" name="OneRom/android_system_netd" />
   <project path="system/qcom" name="OneRom/android_system_qcom" />
-  <project path="system/security" name="platform/system/security" groups="pdk" remote="aosp" />
+  <project path="system/security" name="OneRom/android_system_security" groups="pdk" />
   <project path="system/vold" name="OneRom/android_system_vold" groups="pdk" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" remote="aosp" groups="notdefault,tools" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" remote="aosp" />
