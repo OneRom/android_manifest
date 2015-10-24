@@ -16,7 +16,7 @@
   <remote  name="onerom"
            fetch="https://github.com/"
            review="review.onerom.org"
-           revision="refs/heads/staging/mm" />
+           revision="refs/heads/mm6.0" />
 
   <default revision="refs/heads/mm6.0"
            remote="onerom"
